@@ -144,7 +144,3 @@ Docker 이미지에는 다음이 포함됩니다.
 - `document_tools.py`에 수식 OCR 또는 Mathpix/pix2tex 연동
 - `math_tools.py`의 제약식 파서를 `eval` 기반 스켈레톤에서 안전한 전용 파서로 교체
 - 검증 단계에 역대입, 보기 검산, 조건 충족 여부 검사 추가
-
-## 인코딩 메모
-
-이 README는 UTF-8로 다시 작성하는 것을 전제로 관리해야 합니다. Windows 메모장이나 PowerShell로 수정할 때도 가능하면 UTF-8로 저장해야 GitHub와 터미널에서 한글 깨짐을 피할 수 있습니다.
