@@ -1,107 +1,150 @@
 # CSAT-Agent
 
-?? ?? ?? ?? ????(`LangGraph + LangChain + SymPy`)? ?? ?? ???????.  
-PDF ??, OCR ??, ?? ?? Tool, ?? ??? ?? ?????? ?????.
+CSAT-AgentëŠ” ìˆ˜ëŠ¥ ìˆ˜í•™ ë¬¸ì œ PDFë¥¼ ìž…ë ¥ìœ¼ë¡œ ë°›ì•„ í…ìŠ¤íŠ¸ ì¶”ì¶œ, OCR, ì‹ ì •ê·œí™”, ê¸°í˜¸ ì—°ì‚°, ê²€ì¦ ë‹¨ê³„ë¥¼ ìˆœì°¨ì ìœ¼ë¡œ ìˆ˜í–‰í•˜ëŠ” `LangGraph` ê¸°ë°˜ ì—ì´ì „íŠ¸ ìŠ¤ì¼ˆë ˆí†¤ìž…ë‹ˆë‹¤.
 
-## 1. ?? ?? (??)
+í˜„ìž¬ ì €ìž¥ì†ŒëŠ” ì™„ì„±í˜• ì„œë¹„ìŠ¤ê°€ ì•„ë‹ˆë¼ íŒŒì´í”„ë¼ì¸ êµ¬ì¡°ë¥¼ ë¹ ë¥´ê²Œ ì‹¤í—˜í•˜ê³  í™•ìž¥í•˜ê¸° ìœ„í•œ ìµœì†Œ ê³¨ê²©ì— ê°€ê¹ìŠµë‹ˆë‹¤. íŠ¹ížˆ ë¬¸ì œ íŒŒì‹±, í’€ì´ ì „ëžµ ìˆ˜ë¦½, ìˆ˜ì‹ ì¶”ì¶œ, ìžì—°ì–´ í•´ì„¤ì€ ê¸°ë³¸ êµ¬í˜„ ë˜ëŠ” í”Œë ˆì´ìŠ¤í™€ë” ìˆ˜ì¤€ìž…ë‹ˆë‹¤.
 
-?? ???? ?? ??? ??????.
+## ì£¼ìš” ê¸°ëŠ¥
 
-- `uv` ?? Python ????/??? ?? ??? ??
-- Docker ?? ??/?? ?? ??
-- `Makefile`? `docker + uv + ruff` ?? ???
-- README? ???? ????? ?? ?? ??
-- ????? ?? ??? ??/?? ????? ??
+- PDFë¥¼ ë””ì§€í„¸ PDF, ìŠ¤ìº” PDF, í˜¼í•© PDFë¡œ êµ¬ë¶„
+- ë””ì§€í„¸ PDFëŠ” í…ìŠ¤íŠ¸ ì¶”ì¶œ, ìŠ¤ìº” PDFëŠ” OCR ìˆ˜í–‰
+- íŽ˜ì´ì§€ë³„ ì¶”ì¶œ ê²°ê³¼ë¥¼ ë³‘í•©í•´ ë¬¸ì œ ë³¸ë¬¸ ì •ê·œí™”
+- SymPy ê¸°ë°˜ ì‹ ë‹¨ìˆœí™”, ë¯¸ë¶„, ì ë¶„, ë°©ì •ì‹ í’€ì´ ì§€ì›
+- z3 ê¸°ë°˜ ì •ìˆ˜ ì œì•½ í’€ì´ í•¨ìˆ˜ í¬í•¨
+- ê²€ì¦ ì‹¤íŒ¨ ì‹œ ìž¬ì‹œë„ íšŸìˆ˜ ì•ˆì—ì„œ ìž¬ê³„íš ë£¨í”„ ìˆ˜í–‰
+- Docker ê¸°ë°˜ ì‹¤í–‰ í™˜ê²½ ì œê³µ
 
-## 2. ?? ????? ??
+## ì²˜ë¦¬ íë¦„
+
+ì—ì´ì „íŠ¸ ê·¸ëž˜í”„ëŠ” ì•„ëž˜ ìˆœì„œë¡œ ë™ìž‘í•©ë‹ˆë‹¤.
+
+1. ìž…ë ¥ PDF ì¡´ìž¬ ì—¬ë¶€ í™•ì¸
+2. PDF ìœ í˜• íŒë³„
+3. ìœ í˜•ì— ë”°ë¼ í…ìŠ¤íŠ¸ ì¶”ì¶œ, OCR, ë˜ëŠ” ë‘˜ ë‹¤ ìˆ˜í–‰
+4. ìˆ˜ì‹ ìŠ¤ë‹ˆíŽ« ì¶”ì¶œ í›… í˜¸ì¶œ
+5. í…ìŠ¤íŠ¸ì™€ OCR ê²°ê³¼ë¥¼ ë³‘í•©í•´ ë¬¸ì œ ë³¸ë¬¸ ì •ê·œí™”
+6. ë¬¸ì œë¥¼ íŒŒì‹±í•´ ì—°ì‚° ì¢…ë¥˜ì™€ ë©”íƒ€ë°ì´í„° ì¶”ë¡ 
+7. í’€ì´ ê³„íš ìƒì„±
+8. SymPy ë˜ëŠ” z3 ë„êµ¬ë¡œ í›„ë³´ ë‹µ ê³„ì‚°
+9. ë‹µ í˜•ì‹ê³¼ ë²”ìœ„ë¥¼ ê²€ì¦
+10. ì„±ê³µ ì‹œ ì‘ë‹µ ìƒì„±, ì‹¤íŒ¨ ì‹œ ìž¬ê³„íš ë˜ëŠ” ì¢…ë£Œ
+
+## í”„ë¡œì íŠ¸ êµ¬ì¡°
 
 ```text
 src/csat_agent/
   graph/
-    state.py        # AgentState ???
-    nodes.py        # ingest/parse/plan/solve/verify/explain ??
-    routing.py      # conditional edge ???
-    builder.py      # LangGraph(StateGraph) ??
+    builder.py      # LangGraph StateGraph êµ¬ì„±
+    nodes.py        # PDF ì²˜ë¦¬, íŒŒì‹±, ê³„íš, í’€ì´, ê²€ì¦, ì„¤ëª… ë…¸ë“œ
+    routing.py      # ì¡°ê±´ë¶€ ë¶„ê¸° ë¡œì§
+    state.py        # AgentState ì •ì˜ ë° ì´ˆê¸° ìƒíƒœ ìƒì„±
   tools/
-    document_tools.py  # PDF ?? + OCR + normalize
-    math_tools.py      # SymPy/z3 ?? + LangChain StructuredTool ??
-  main.py           # CLI ??????
+    document_tools.py  # PDF í…ìŠ¤íŠ¸ ì¶”ì¶œ, OCR, ì •ê·œí™”
+    math_tools.py      # SymPy / z3 ëž˜í¼
+  main.py           # CLI ì§„ìž…ì 
 ```
 
-## 3. ?? ?? ?? (uv)
-
-### ?? ??
+## ìš”êµ¬ ì‚¬í•­
 
 - Python 3.12
-- `uv` (?: `python -m pip install uv`)
+- `uv`
+- ë¡œì»¬ OCR ì‹¤í–‰ ì‹œ Tesseract ì„¤ì¹˜ í•„ìš”
+- í•œêµ­ì–´ OCRê¹Œì§€ ì‚¬ìš©í•  ê²½ìš° `kor` ì–¸ì–´ ë°ì´í„° í•„ìš”
 
-### ?? ??
+`uv`ê°€ ì—†ë‹¤ë©´ ì•„ëž˜ì²˜ëŸ¼ ì„¤ì¹˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+
+```bash
+python -m pip install uv
+```
+
+## ë¡œì»¬ ê°œë°œ í™˜ê²½
+
+ê°€ìƒí™˜ê²½ê³¼ ì˜ì¡´ì„±ì„ í•œ ë²ˆì— ì¤€ë¹„í•©ë‹ˆë‹¤.
 
 ```bash
 make sync
 ```
 
-? ??? ????? ??? ?????.
+ì‹¤í–‰ ë‚´ìš©:
 
-- `.venv` ??: `uv venv .venv --python 3.12`
-- ??? ???: `uv sync --group dev`
+- `.venv` ìƒì„±: `uv venv .venv --python 3.12`
+- ê°œë°œ ì˜ì¡´ì„±ê¹Œì§€ ë™ê¸°í™”: `uv sync --group dev`
 
-### ?? ??
+## ì‹¤í–‰ ë°©ë²•
+
+ê¸°ë³¸ ì‹¤í–‰:
 
 ```bash
 uv run python -m csat_agent.main "data/problem.pdf"
 ```
 
-## 4. Makefile ???
+ìž¬ì‹œë„ íšŸìˆ˜ ì§€ì •:
+
+```bash
+uv run python -m csat_agent.main "data/problem.pdf" --max-retries 3
+```
+
+`make`ë¡œ ì‹¤í–‰í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.
+
+```bash
+make run PDF=data/problem.pdf
+```
+
+## Makefile ëª…ë ¹
 
 ```bash
 make help
 ```
 
-?? ??:
+ì£¼ìš” íƒ€ê¹ƒ:
 
-- `make venv`: `.venv` ??
-- `make sync`: ???+?? ??? ??
-- `make lock`: `uv.lock` ??
-- `make lint`: `ruff check`
-- `make format`: `ruff check --fix` + `ruff format`
-- `make format-check`: ?? ?? ??
-- `make run PDF=...`: ?? ??
-- `make docker-build`: Docker ??? ??
-- `make docker-run`: ???? ??(?? `data/` ???)
-- `make docker-lint`: Docker ?? lint
+- `make venv`: `.venv` ìƒì„±
+- `make sync`: ê°€ìƒí™˜ê²½ ìƒì„± í›„ ì˜ì¡´ì„± ì„¤ì¹˜
+- `make lock`: `uv.lock` ê°±ì‹ 
+- `make lint`: `ruff check src`
+- `make format`: `ruff check --fix src` í›„ `ruff format src`
+- `make format-check`: í¬ë§·/ë¦°íŠ¸ ê²€ì¦ë§Œ ìˆ˜í–‰
+- `make run PDF=...`: ë¡œì»¬ì—ì„œ ì—ì´ì „íŠ¸ ì‹¤í–‰
+- `make docker-build`: Docker ì´ë¯¸ì§€ ë¹Œë“œ
+- `make docker-run PDF=...`: ì»¨í…Œì´ë„ˆì—ì„œ ì‹¤í–‰
+- `make docker-lint`: Docker ë‚´ë¶€ì—ì„œ lint ìˆ˜í–‰
+- `make clean`: `uv` ìºì‹œ ì •ë¦¬
 
-## 5. Docker ??
+## Docker ì‚¬ìš©
 
-### ??
+ì´ë¯¸ì§€ ë¹Œë“œ:
 
 ```bash
 make docker-build
 ```
 
-### ??
+ì»¨í…Œì´ë„ˆ ì‹¤í–‰:
 
 ```bash
 make docker-run PDF=data/problem.pdf
 ```
 
-??:
+Docker ì´ë¯¸ì§€ì—ëŠ” ë‹¤ìŒì´ í¬í•¨ë©ë‹ˆë‹¤.
 
-- ??? ???: `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`
-- OCR ??? ?? `tesseract-ocr`, `tesseract-ocr-kor` ??
-- ?? ??????: `uv run python -m csat_agent.main`
+- ë² ì´ìŠ¤ ì´ë¯¸ì§€: `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`
+- OCR íŒ¨í‚¤ì§€: `tesseract-ocr`, `tesseract-ocr-kor`
+- ì‹¤í–‰ ëª…ë ¹: `uv run python -m csat_agent.main`
 
-## 6. ?? ?? ?? (ruff)
+## í˜„ìž¬ êµ¬í˜„ í•œê³„
 
-```bash
-make lint
-make format
-```
+- `extract_math_latex()`ëŠ” ì•„ì§ í”Œë ˆì´ìŠ¤í™€ë”ìž…ë‹ˆë‹¤.
+- ë¬¸ì œ íŒŒì„œì™€ í”Œëž˜ë„ˆëŠ” ê·œì¹™ ê¸°ë°˜ ê¸°ë³¸ êµ¬í˜„ë§Œ í¬í•¨í•©ë‹ˆë‹¤.
+- ìžì—°ì–´ í•´ì„¤ì€ í›„ë³´ ë‹µê³¼ ê²€ì¦ ê²°ê³¼ë¥¼ ë‹¨ìˆœ ìš”ì•½í•˜ëŠ” ìˆ˜ì¤€ìž…ë‹ˆë‹¤.
+- ê²€ì¦ ë¡œì§ì€ í˜„ìž¬ ì •ìˆ˜ ì—¬ë¶€ì™€ ê°’ ë²”ìœ„ ì¤‘ì‹¬ìž…ë‹ˆë‹¤.
+- ì‹¤ì œ ìˆ˜ëŠ¥ ë¬¸ì œ í’€ì´ìš©ìœ¼ë¡œ ì“°ë ¤ë©´ LLM ì—°ë™, ì‹ ì¸ì‹, ì œì•½ íŒŒì„œ, ê²€ì¦ ì „ëžµ ê³ ë„í™”ê°€ ì¶”ê°€ë¡œ í•„ìš”í•©ë‹ˆë‹¤.
 
-`pyproject.toml`?? Ruff ??? ??? ??? ?? ?????.
+## ê¶Œìž¥ í™•ìž¥ ë°©í–¥
 
-## 7. ?? ??
+- `nodes.py`ì˜ parser/planner/explainerë¥¼ LLM Runnableë¡œ êµì²´
+- `document_tools.py`ì— ìˆ˜ì‹ OCR ë˜ëŠ” Mathpix/pix2tex ì—°ë™
+- `math_tools.py`ì˜ ì œì•½ì‹ íŒŒì„œë¥¼ `eval` ê¸°ë°˜ ìŠ¤ì¼ˆë ˆí†¤ì—ì„œ ì•ˆì „í•œ ì „ìš© íŒŒì„œë¡œ êµì²´
+- ê²€ì¦ ë‹¨ê³„ì— ì—­ëŒ€ìž…, ë³´ê¸° ê²€ì‚°, ì¡°ê±´ ì¶©ì¡± ì—¬ë¶€ ê²€ì‚¬ ì¶”ê°€
 
-- `extract_math_latex()`? `pix2tex`/`Mathpix` ??? ?? placeholder???.
-- OCR ???? ?? PDF ??, Tesseract ?? ??? ??? ??? ????.
-- ?? ?? ?? ??? ???? `nodes.py`? ?? parser/planner/explainer? LLM Runnable? ???? ???.
+## ì¸ì½”ë”© ë©”ëª¨
+
+ì´ READMEëŠ” UTF-8ë¡œ ë‹¤ì‹œ ìž‘ì„±í•˜ëŠ” ê²ƒì„ ì „ì œë¡œ ê´€ë¦¬í•´ì•¼ í•©ë‹ˆë‹¤. Windows ë©”ëª¨ìž¥ì´ë‚˜ PowerShellë¡œ ìˆ˜ì •í•  ë•Œë„ ê°€ëŠ¥í•˜ë©´ UTF-8ë¡œ ì €ìž¥í•´ì•¼ GitHubì™€ í„°ë¯¸ë„ì—ì„œ í•œê¸€ ê¹¨ì§ì„ í”¼í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
